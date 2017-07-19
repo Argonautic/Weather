@@ -1,3 +1,4 @@
+// used to access a url and turn it into a promise
 import axios from 'axios'
 
 const API_KEY = '8192986d26ed79a84092d795e1f58fb7';
@@ -11,6 +12,8 @@ export function fetchWeather(city) {
 
     return {
         type: FETCH_WEATHER,
+        // request is a promise, but our redux-promise middleware
+        // will automatically process it into data
         payload: request,
     };
 }
